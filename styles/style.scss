@@ -1,0 +1,32 @@
+.quote-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#quote-box {
+    width: 31em;
+    padding: 2em;
+    background-color: white;
+    border-radius: 0.5em;
+
+    #new-quote, #tweet-quote {
+        color: white;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        border: 0em;
+    }
+
+    #tweet-quote {
+        padding: 0.5em 0.75em 0.5em 0.75em;
+    }
+}
+
+
+.interact-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
