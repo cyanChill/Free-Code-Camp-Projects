@@ -3,20 +3,24 @@ body {
 }
 
 .div-title {
+    border: 0.025em solid black;
     background-color: #4AA3A3;
     padding: 0.25em;
+    margin: 0;
 }
 
-textarea {
-    min-height: 90vh;
-    width: 100%;
-    resize: none;
-    background-color: #C0D8D8;
+#editor-div {
+    textarea {
+        height: 15em;
+        width: 100%;
+        resize: none;
+        background-color: #C0D8D8;
+    }
 }
 
 #preview {
     border: 0.025em solid black;
-    min-height: 90vh;
+    min-height: 25vh;
     width: 100%;
     background-color: #C0D8D8;
     padding: 0.5em;
@@ -27,6 +31,7 @@ textarea {
     
     pre, code {
         background-color: white;
+        font-weight: bold;
     }
     
     h1 {
