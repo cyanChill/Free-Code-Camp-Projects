@@ -62,14 +62,18 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="row m-1 p-1">
-                <div id="editor-div" className="col-6">
-                    <h4 className="div-title">Editor</h4>
-                    <textarea id="editor" value={this.state.mdField} onChange={this.handleChange} />
+            <div className="container">
+                <div className="row justify-content-center pt-4">
+                    <div id="editor-div" className="col-7">
+                        <h4 className="div-title">Editor</h4>
+                        <textarea id="editor" value={this.state.mdField} onChange={this.handleChange} />
+                    </div>
                 </div>
-                <div id="preview-div" className="col-6">
-                    <h4 className="div-title">Previewer</h4>
-                    <div id="preview" />
+                <div className="row justify-content-center pt-4 mb-4">
+                    <div id="preview-div" className="col-10">
+                        <h4 className="div-title">Previewer</h4>
+                        <div id="preview" />
+                    </div>
                 </div>
             </div>
         );
@@ -79,3 +83,4 @@ class App extends React.Component {
 
 
 ReactDOM.render(<App />, document.getElementById('app'));
+$('#preview').html(marked(defaultText));
