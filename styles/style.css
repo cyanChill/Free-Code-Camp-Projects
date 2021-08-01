@@ -103,4 +103,23 @@ body {
   text-align: center;
   margin: 3px;
 }
+
+@media (max-width: 500px) {
+  #drum-machine {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 210px;
+  }
+  .slider-wrapper {
+    margin-top: 15px;
+  }
+  .slider-wrapper input[type="range"] {
+    -webkit-appearance: slider-horizontal;
+  }
+  #volume-bar-label {
+    margin-top: 10px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

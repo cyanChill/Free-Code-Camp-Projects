@@ -78,3 +78,22 @@ body {
     text-align: center;
     margin: 3px;
 }
+
+@media (max-width: 500px) {
+    #drum-machine {
+        flex-direction: column;
+        width: 210px;
+    }
+
+    .slider-wrapper {
+        margin-top: 15px;
+
+        input[type="range"] {
+            -webkit-appearance: slider-horizontal;
+        }
+    }
+
+    #volume-bar-label {
+        margin-top: 10px;
+    }
+}
