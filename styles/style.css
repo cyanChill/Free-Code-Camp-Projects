@@ -24,10 +24,10 @@ body {
       -ms-flex-align: inherit;
           align-items: inherit;
   width: 475px;
-  padding: 5px;
-  background-color: #6ab9b9;
+  padding: 10px;
+  background: url("https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   border-radius: 0.5em;
-  border: 0.1em solid #147272;
+  border: 0.125em solid black;
 }
 
 #button-display {
@@ -45,13 +45,15 @@ body {
 }
 
 #button-display #display {
-  background-color: grey;
-  color: white;
+  background-color: #afafaf;
+  color: black;
+  font-weight: bold;
   text-align: center;
   width: 200px;
   height: 34px;
   padding: 5px;
   border-radius: 0.5em;
+  border: 0.1em solid black;
 }
 
 .drum-pad {
@@ -93,5 +95,12 @@ body {
 
 #volume-bar-label {
   font-weight: bold;
+  background-color: #f8dfa1;
+  border: 0.1em solid black;
+  width: 107.5px;
+  padding: 1px 5px;
+  border-radius: 0.5em;
+  text-align: center;
+  margin: 3px;
 }
 /*# sourceMappingURL=style.css.map */
