@@ -64,9 +64,19 @@ class App extends React.Component {
     playAudio(event) {
         const target = instruments[event.target.id];
         $('#display').text(target.display);
-        //$('#heater-1').css("background-color", "rgb(147, 161, 175)");
+        document.getElementById(target.key).currentTime = 0;
         document.getElementById(target.key).play();
         document.getElementById(target.key).volume = this.state.vol / 100;
+        $(`#${event.target.id}`).css({
+            backgroundColor: "rgb(147, 161, 175)",
+            fontWeight: "bold",
+        });
+        setTimeout(() => {
+            $(`#${event.target.id}`).css({
+                backgroundColor: "rgb(205, 209, 214)",
+                fontWeight: "normal",
+            })
+        }, 200);
     }
 
     render() {
@@ -125,55 +135,3 @@ $(document).keydown((event) => {
     if (event.which == 88) $('#dp-X').click();
     if (event.which == 67) $('#dp-C').click();
 });
-
-/*
-$('#heater-1').click(() => {
-    $('#display').text('Heater 1');
-    $('#heater-1').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('Q').play();
-    document.getElementById('Q').volume = this.state.vol / 100;
-    console.log(document.getElementById('Q').volume)
-    //$('#heater-1').css("background-color", "rgb(205, 209, 214)");
-
-});
-$('#heater-2').click(() => {
-    $('#display').text('Heater 2');
-    $('#heater-2').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('W').play();
-});
-$('#heater-3').click(() => {
-    $('#display').text('Heater 3');
-    $('#heater-3').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('E').play();
-});
-$('#heater-4').click(() => {
-    $('#display').text('Heater 4');
-    $('#heater-4').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('A').play();
-});
-$('#clap').click(() => {
-    $('#display').text('Clap');
-    $('#clap').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('S').play();
-});
-$('#open-hh').click(() => {
-    $('#display').text('Open HH');
-    $('#open-hh').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('D').play();
-});
-$('#kick-n-hat').click(() => {
-    $('#display').text('Kick n\' Hat');
-    $('#kick-n-hat').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('Z').play();
-});
-$('#kick').click(() => {
-    $('#display').text('Kick');
-    $('#kick').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('X').play();
-});
-$('#closed-hh').click(() => {
-    $('#display').text('Closed HH');
-    $('#closed-hh').css("background-color", "rgb(147, 161, 175)");
-    document.getElementById('C').play();
-});
-*/
