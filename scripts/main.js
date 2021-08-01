@@ -1,39 +1,48 @@
 const instruments = {
     "dp-Q": {
         display: "Heater 1",
-        key: 'Q'
+        key: 'Q',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3',
     },
     "dp-W": {
         display: "Heater 2",
-        key: 'W'
+        key: 'W',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3',
     },
     "dp-E": {
         display: "Heater 3",
-        key: 'E'
+        key: 'E',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3',
     },
     "dp-A": {
         display: "Heater 4",
-        key: 'A'
+        key: 'A',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3',
     },
     "dp-S": {
         display: "Clap",
-        key: 'S'
+        key: 'S',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3',
     },
     "dp-D": {
         display: "Open HH",
-        key: 'D'
+        key: 'D',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3',
     },
     "dp-Z": {
         display: "Kick n' Hat",
-        key: 'Z'
+        key: 'Z',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3',
     },
     "dp-X": {
         display: "Kick",
-        key: 'X'
+        key: 'X',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3',
     },
     "dp-C": {
         display: "Closed HH",
-        key: 'C'
+        key: 'C',
+        src: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',
     }
 }
 
@@ -61,53 +70,34 @@ class App extends React.Component {
     }
 
     render() {
+        let btns = [];
+        for (let i = 0; i < Object.keys(instruments).length; i += 3) {
+            const keys = Object.keys(instruments);
+            const vals = Object.values(instruments);
+            btns.push(
+                <div key={`group-${i / 3 + 1}`}>
+                    <button id={keys[i]} className="drum-pad" onClick={this.playAudio}>
+                        {vals[i].key}
+                        <audio id={vals[i].key} className="clip" src={vals[i].src} />
+                    </button>
+                    <button id={keys[i+1]} className="drum-pad" onClick={this.playAudio}>
+                        {vals[i+1].key}
+                        <audio id={vals[i+1].key} className="clip" src={vals[i+1].src} />
+                    </button>
+                    <button id={keys[i+2]} className="drum-pad" onClick={this.playAudio}>
+                        {vals[i+2].key}
+                        <audio id={vals[i+2].key} className="clip" src={vals[i+2].src} />
+                    </button>
+                </div>
+            );
+        };
+
         return (
             <div id="body-container">
                 <div id="drum-machine">
                     <div id="button-display">
                         <p id="display" />
-                        <div>
-                            <button id="dp-Q" className="drum-pad" onClick={this.playAudio}>
-                                Q
-                                <audio id="Q" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" />
-                            </button>
-                            <button id="dp-W" className="drum-pad" onClick={this.playAudio}>
-                                W
-                                <audio id="W" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" />
-                            </button>
-                            <button id="dp-E" className="drum-pad" onClick={this.playAudio}>
-                                E
-                                <audio id="E" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" />
-                            </button>
-                        </div>
-                        <div>
-                            <button id="dp-A" className="drum-pad" onClick={this.playAudio}>
-                                A
-                                <audio id="A" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3" />
-                            </button>
-                            <button id="dp-S" className="drum-pad" onClick={this.playAudio}>
-                                S
-                                <audio id="S" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" />
-                            </button>
-                            <button id="dp-D" className="drum-pad" onClick={this.playAudio}>
-                                D
-                                <audio id="D" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" />
-                            </button>
-                        </div>
-                        <div>
-                            <button id="dp-Z" className="drum-pad" onClick={this.playAudio}>
-                                Z
-                                <audio id="Z" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" />
-                            </button>
-                            <button id="dp-X" className="drum-pad" onClick={this.playAudio}>
-                                X
-                                <audio id="X" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" />
-                            </button>
-                            <button id="dp-C" className="drum-pad" onClick={this.playAudio}>
-                                C
-                                <audio id="C" className="clip" src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3" />
-                            </button>
-                        </div>
+                        {btns}
                     </div>
                     <div id="volume-bar" className="slider-wrapper">
                         <input id="volume" name="volume" type="range" min="0" max="100" value={this.state.vol} onChange={this.updateVolume} />
