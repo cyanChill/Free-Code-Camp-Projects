@@ -1,4 +1,8 @@
-#drum-machine-container {
+body {
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+#body-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,23 +16,54 @@
   background-color: beige;
 }
 
-#test-box {
+#control-box {
   display: inherit;
-  -webkit-box-pack: inherit;
-      -ms-flex-pack: inherit;
-          justify-content: inherit;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: inherit;
       -ms-flex-align: inherit;
           align-items: inherit;
   width: 500px;
   padding: 5px;
-  background-color: green;
+  background-color: #6ab9b9;
+  border-radius: 0.5em;
+  border: 0.1em solid #147272;
+}
+
+#button-display {
+  display: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#button-display #action-display {
+  background-color: grey;
+  color: white;
+  text-align: center;
+  width: 200px;
+  padding: 5px;
+  border-radius: 0.5em;
 }
 
 .action-button {
   height: 50px;
   width: 50px;
   margin: 1px;
+  border: 0.1em solid black;
+  border-radius: 0.5em;
+  background-color: #cdd1d6;
+}
+
+.action-button:hover {
+  background-color: #aab8c7;
 }
 
 .slider-wrapper {
@@ -53,5 +88,9 @@
 
 .slider-wrapper input[type="range"]:focus {
   outline: none;
+}
+
+#volume-bar-label {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
