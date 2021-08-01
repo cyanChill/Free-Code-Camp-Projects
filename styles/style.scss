@@ -10,7 +10,7 @@ body {
     background-color: beige;
 }
 
-#control-box {
+#drum-machine {
     display: inherit;
     justify-content: space-around;
     align-items: inherit;
@@ -27,18 +27,19 @@ body {
     justify-content: center;
     align-items: center;
     
-    #action-display {
+    #display {
         background-color: grey;
         color: white;
         text-align: center;
         width: 200px;
+        height: 34px;
         padding: 5px;
         border-radius: 0.5em;
     }
 }
 
 
-.action-button {
+.drum-pad {
     height: 50px;
     width: 50px;
     margin: 1px;
@@ -47,7 +48,7 @@ body {
     background-color: rgb(205, 209, 214);
 }
 
-.action-button:hover {
+.drum-pad:hover {
     background-color: rgb(170, 184, 199);
 }
 

@@ -16,7 +16,7 @@ body {
   background-color: beige;
 }
 
-#control-box {
+#drum-machine {
   display: inherit;
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -44,16 +44,17 @@ body {
           align-items: center;
 }
 
-#button-display #action-display {
+#button-display #display {
   background-color: grey;
   color: white;
   text-align: center;
   width: 200px;
+  height: 34px;
   padding: 5px;
   border-radius: 0.5em;
 }
 
-.action-button {
+.drum-pad {
   height: 50px;
   width: 50px;
   margin: 1px;
@@ -62,7 +63,7 @@ body {
   background-color: #cdd1d6;
 }
 
-.action-button:hover {
+.drum-pad:hover {
   background-color: #aab8c7;
 }
 
