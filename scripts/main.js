@@ -14,16 +14,12 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = defaultSettings;
-        this.playAlarm = this.playAlarm.bind(this);
         this.updateLen = this.updateLen.bind(this);
         this.runTimer = this.runTimer.bind(this);
         this.resetTimer = this.resetTimer.bind(this);
         this.countDown = this.countDown.bind(this);
     }
 
-    playAlarm() {
-
-    }
 
     // Returns interval function for countdown
     countDown() {
@@ -45,6 +41,7 @@ class App extends React.Component {
                     },
                 });
             } else {
+                document.getElementById('beep').play();
                 clearInterval(this.state.timing.timeVar);
                 this.setState({
                     timing: {
@@ -58,12 +55,18 @@ class App extends React.Component {
         }, 1000);
     }
 
+    // Play/Pause the displayed timer
     runTimer() {
         let {timing} = this.state;
 
         if (timing.status === 'play') {
             clearInterval(timing.timeVar);
         }
+
+        // Stop alarm sound if it's running
+        document.getElementById('beep').pause();
+        document.getElementById('beep').currentTime = 0;
+
         this.setState({
             timing: {
                 ...this.state.timing,
@@ -74,11 +77,15 @@ class App extends React.Component {
 
     }
 
+    // Reset the timer values to it's default values
     resetTimer() {
         clearInterval(this.state.timing.timeVar);
         this.setState(defaultSettings);
+        document.getElementById('beep').pause();
+        document.getElementById('beep').currentTime = 0;
     }
 
+    // Updating the length of the break and session
     updateLen(event) {
         const type = event.target.id.split('-');
         const {breakLen, sessionLen, timing} = this.state;
@@ -123,6 +130,7 @@ class App extends React.Component {
 
 
     render() {
+        const {timing} = this.state;
         const lengthControl = ['break','session'].map((entry) => {
             return (
                 <div id={`${entry}-container`} key={`${entry}-key`}>
@@ -138,13 +146,12 @@ class App extends React.Component {
             );
         });
 
-        const {timing} = this.state;
-
 
         return (
             <div id="project-container">
                 {lengthControl}
                 <div id="timer-container">
+                    <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" />
                     <p id="timer-label">{timing.type}</p>
                     <p id="time-left">{`${(timing.min).toString().padStart(2, '0')}:${(timing.sec).toString().padStart(2, '0')}`}</p>
                     <div id="media-controls">
