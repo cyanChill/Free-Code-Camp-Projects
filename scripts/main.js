@@ -39,9 +39,14 @@ class App extends React.Component {
                         min: timing.min - 1,
                         sec: 59,
                     },
+                }, () => {
+                    if (this.state.timing.min === 0) {
+                        $('#timer-display').css("color", "red");
+                    }
                 });
             } else {
                 document.getElementById('beep').play();
+                $('#timer-display').css("color", "black");
                 clearInterval(this.state.timing.timeVar);
                 this.setState({
                     timing: {
@@ -79,6 +84,7 @@ class App extends React.Component {
 
     // Reset the timer values to it's default values
     resetTimer() {
+        $('#timer-display').css("color", "black");
         clearInterval(this.state.timing.timeVar);
         this.setState(defaultSettings);
         document.getElementById('beep').pause();
@@ -134,14 +140,16 @@ class App extends React.Component {
         const lengthControl = ['break','session'].map((entry) => {
             return (
                 <div id={`${entry}-container`} key={`${entry}-key`}>
-                    <p id={`${entry}-label`}>{`${entry} Length`}</p>
-                    <button id={`${entry}-decrement`} onClick={this.updateLen}>
-                        <i id={`${entry}-decrement-icon`} className="fas fa-arrow-down"></i>
-                    </button>
-                    <span id={`${entry}-length`}>{this.state[`${entry}Len`]}</span>
-                    <button id={`${entry}-increment`} onClick={this.updateLen}>
-                        <i id={`${entry}-increment-icon`} className="fas fa-arrow-up"></i>
-                    </button>
+                    <p id={`${entry}-label`}>{`${entry[0].toUpperCase() + entry.substr(1)} Length`}</p>
+                    <div className="control-and-labels">
+                        <button id={`${entry}-decrement`} onClick={this.updateLen}>
+                            <i id={`${entry}-decrement-icon`} className="fas fa-arrow-down"></i>
+                        </button>
+                        <span id={`${entry}-length`}>{this.state[`${entry}Len`]}</span>
+                        <button id={`${entry}-increment`} onClick={this.updateLen}>
+                            <i id={`${entry}-increment-icon`} className="fas fa-arrow-up"></i>
+                        </button>
+                    </div>
                 </div>
             );
         });
@@ -149,11 +157,16 @@ class App extends React.Component {
 
         return (
             <div id="project-container">
-                {lengthControl}
+                <h2 id="project-title">25 + 5 Clock</h2>
+                <div id="time-controls">
+                    {lengthControl}
+                </div>
                 <div id="timer-container">
                     <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" />
-                    <p id="timer-label">{timing.type}</p>
-                    <p id="time-left">{`${(timing.min).toString().padStart(2, '0')}:${(timing.sec).toString().padStart(2, '0')}`}</p>
+                    <div id="timer-display">
+                        <h3 id="timer-label">{timing.type}</h3>
+                        <p id="time-left">{`${(timing.min).toString().padStart(2, '0')}:${(timing.sec).toString().padStart(2, '0')}`}</p>
+                    </div>
                     <div id="media-controls">
                         <button id="start_stop" onClick={this.runTimer}>
                             <i className="fas fa-play"></i>
