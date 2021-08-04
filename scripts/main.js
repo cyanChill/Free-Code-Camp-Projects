@@ -69,12 +69,12 @@ class App extends React.Component {
         document.getElementById(target.key).volume = this.state.vol / 100;
         $(`#${event.target.id}`).css({
             backgroundColor: "rgb(147, 161, 175)",
-            fontWeight: "bold",
+            fontWeight: "bolder",
         });
         setTimeout(() => {
             $(`#${event.target.id}`).css({
                 backgroundColor: "rgb(205, 209, 214)",
-                fontWeight: "normal",
+                fontWeight: "bold",
             })
         }, 200);
     }
