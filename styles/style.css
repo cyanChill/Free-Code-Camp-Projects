@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,7 +15,7 @@ body {
           flex-direction: column;
   height: 95vh;
   background-color: beige;
-  font-family: "Tahoma";
+  font-family: 'Nunito', sans-serif;
   font-size: 20px;
   text-align: center;
 }
@@ -89,9 +89,12 @@ body #project-container #timer-container {
   margin-bottom: 10px;
 }
 
-body #project-container #timer-container #time-left {
+body #project-container #timer-container #timer-display #timer-label {
+  font-size: 28px;
+}
+
+body #project-container #timer-container #timer-display #time-left {
   font-size: 36px;
-  font-family: 'Orbitron', sans-serif;
 }
 
 button {
