@@ -1,9 +1,4 @@
-@font-face {
-  font-family: "Calculator";
-  src: url("//db.onlinewebfonts.com/t/ce4b0ee545ec52c2ec8cec62d23ffb09.eot");
-  src: url("//db.onlinewebfonts.com/t/ce4b0ee545ec52c2ec8cec62d23ffb09.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ce4b0ee545ec52c2ec8cec62d23ffb09.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ce4b0ee545ec52c2ec8cec62d23ffb09.woff") format("woff"), url("//db.onlinewebfonts.com/t/ce4b0ee545ec52c2ec8cec62d23ffb09.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ce4b0ee545ec52c2ec8cec62d23ffb09.svg#Calculator") format("svg");
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,7 +91,7 @@ body #project-container #timer-container {
 
 body #project-container #timer-container #time-left {
   font-size: 36px;
-  font-family: 'Calculator', sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 button {
