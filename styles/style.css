@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 body {
-  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: 'Nunito', sans-serif;
   margin: 0;
 }
 
@@ -64,10 +65,13 @@ body {
   border: 0.1em solid black;
   border-radius: 0.5em;
   background-color: #cdd1d6;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
 }
 
 .drum-pad:hover {
   background-color: #aab8c7;
+  cursor: pointer;
 }
 
 .slider-wrapper {
