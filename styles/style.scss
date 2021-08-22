@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+#body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: beige;
+}
+
+#drum-machine {
+    display: inherit;
+    justify-content: space-around;
+    align-items: inherit;
+    width: 475px;
+    padding: 10px;
+    background: url("https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    border-radius: 0.5em;
+    border: 0.125em solid black;
+}
+
+#button-display {
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    #display {
+        background-color: rgb(175, 175, 175);
+        color: black;
+        font-weight: bold;
+        text-align: center;
+        width: 200px;
+        height: 21px;
+        padding: 5px;
+        border-radius: 0.5em;
+        border: 0.1em solid black;
+    }
+}
+
+.drum-pad {
+    height: 50px;
+    width: 50px;
+    margin: 1px;
+    border: 0.1em solid black;
+    border-radius: 0.5em;
+    background-color: rgb(205, 209, 214);
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.drum-pad:hover {
+    background-color: rgb(170, 184, 199);
+    cursor: pointer;
+}
+
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+
+    input[type="range"] {
+        -webkit-appearance: slider-vertical;
+    }
+    
+    input[type="range"]:focus {
+        outline: none;
+    }
+}
+
+#volume-bar-label {
+    font-weight: bold;
+    background-color: #f8dfa1;
+    border: 0.1em solid black;
+    width: 107.5px;
+    padding: 1px 5px;
+    border-radius: 0.5em;
+    text-align: center;
+    margin: 3px;
+}
+
+@media (max-width: 500px) {
+    #drum-machine {
+        flex-direction: column;
+        width: 210px;
+    }
+
+    .slider-wrapper {
+        margin-top: 15px;
+
+        input[type="range"] {
+            -webkit-appearance: slider-horizontal;
+        }
+    }
+
+    #volume-bar-label {
+        margin-top: 10px;
+    }
+}
