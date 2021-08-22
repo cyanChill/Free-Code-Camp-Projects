@@ -1,0 +1,54 @@
+body {
+  background-color: #87B5B5;
+}
+
+.div-title {
+  border: 0.025em solid black;
+  background-color: #4AA3A3;
+  padding: 0.25em;
+  margin: 0;
+}
+
+#editor-div textarea {
+  height: 15em;
+  width: 100%;
+  resize: none;
+  background-color: #C0D8D8;
+}
+
+#preview {
+  border: 0.025em solid black;
+  min-height: 25vh;
+  width: 100%;
+  background-color: #C0D8D8;
+  padding: 0.5em;
+}
+
+#preview img {
+  max-width: 100%;
+}
+
+#preview pre, #preview code {
+  background-color: white;
+  font-weight: bold;
+}
+
+#preview h1 {
+  border-bottom: 0.1em solid black;
+}
+
+#preview h2 {
+  border-bottom: 0.05em solid black;
+}
+
+#preview blockquote {
+  margin-left: 1em;
+  padding-left: 0.5em;
+  border-left: 0.2em solid black;
+}
+
+#preview table, #preview th, #preview td {
+  border: 0.05em solid black;
+  padding: 0.25em;
+}
+/*# sourceMappingURL=style.css.map */
