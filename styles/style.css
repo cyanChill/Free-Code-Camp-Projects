@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 95vh;
+  background-color: beige;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+body #project-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 500px;
+  border: 0.15em solid black;
+  border-radius: 0.5em;
+  padding: 10px;
+  background-color: #B6CFB6;
+}
+
+body #project-container h2, body #project-container h3 {
+  margin: 10px 0px;
+}
+
+body #project-container p {
+  margin: 5px 0px;
+}
+
+body #project-container span {
+  padding: 0px 2px;
+  margin: 1px;
+  min-width: 25px;
+}
+
+body #project-container .control-and-labels {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #project-container #time-controls {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+      grid-template-areas: "break session";
+}
+
+body #project-container #time-controls #break-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: break;
+}
+
+body #project-container #time-controls #session-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: session;
+}
+
+body #project-container #timer-container {
+  background-color: #C6DBDA;
+  border: 0.15em solid black;
+  border-radius: 0.5em;
+  width: 350px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+body #project-container #timer-container #timer-display #timer-label {
+  font-size: 28px;
+}
+
+body #project-container #timer-container #timer-display #time-left {
+  font-size: 36px;
+}
+
+button {
+  border: 0.1em solid black;
+  border-radius: 0.5em;
+  margin: 1px;
+  min-width: 25px;
+  height: 25px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #c2bdbd;
+}
+
+@media (max-width: 550px) {
+  body #project-container {
+    width: 90vw;
+  }
+  body #project-container #timer-container {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 330px) {
+  body #project-container #time-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  body #project-container #time-controls #break-container {
+    margin: 5px 0px;
+  }
+  body #project-container #time-controls #session-container {
+    margin: 5px 0px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,10 +1,3 @@
-# Description:
+# FreeCodeCamp 25 + 5 Clock Project
 
-This is a repository housing most of the FreeCodeCamp projects done.
-
-## Projects in Repository:
-
-- Random Quote Machine
-- Markdown Previewer
-- Drum Machine
-- 25 5 Clock
+Demonstration Codepen Site: https://codepen.io/cyanChill/full/RwVBObK

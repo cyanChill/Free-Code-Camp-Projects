@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95vh;
+    background-color: beige;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    text-align: center;
+
+    #project-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 500px;
+        border: 0.15em solid black;
+        border-radius: 0.5em;
+        padding: 10px;
+        background-color: #B6CFB6;
+
+        h2, h3 {
+            margin: 10px 0px;
+        }
+
+        p {
+            margin: 5px 0px;
+        }
+        
+        span {
+            padding: 0px 2px;
+            margin: 1px;
+            min-width: 25px;
+        }
+
+        .control-and-labels {
+            display: flex;
+            justify-content: center;
+        }
+
+        #time-controls {
+            display: grid;
+            width: 100%;
+            grid-template-areas: "break session";
+
+            #break-container {
+                grid-area: break;
+            }
+
+            #session-container {
+                grid-area: session;
+            }
+        }
+
+        #timer-container {
+            background-color: #C6DBDA;
+            border: 0.15em solid black;
+            border-radius: 0.5em;
+            width: 350px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+
+            #timer-display {
+                #timer-label {
+                    font-size: 28px;
+                }
+
+                #time-left {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+}
+
+button {
+    border: 0.1em solid black;
+    border-radius: 0.5em;
+    margin: 1px;
+    min-width: 25px;
+    height: 25px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(194, 189, 189);
+}
+
+
+@media (max-width: 550px) {
+    body {
+        #project-container {
+            width: 90vw;
+
+            #timer-container {
+                width: 75vw;
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    body {
+        #project-container {
+            #time-controls {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                
+                #break-container {
+                    margin: 5px 0px;
+                }
+    
+                #session-container {
+                    margin: 5px 0px;
+                }
+            }
+        }
+    }
+}
